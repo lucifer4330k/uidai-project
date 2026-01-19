@@ -1,92 +1,119 @@
-# 🏛️ Aadhaar Ops - Command Center Dashboard v2.0
+# 🏛️ Aadhaar Ops Command Center Dashboard
 
-A next-generation analytics platform for UIDAI Aadhaar operations, featuring a Python-powered backend, "Neo-Enterprise" design system, and AI-driven hyper-local optimization.
+A next-generation analytics platform for UIDAI Aadhaar operations, featuring a Python-powered analytics engine, modern UI, and AI-driven resource optimization.
 
-![Dashboard Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![React](https://img.shields.io/badge/React-19.0-blue) ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-fastgreen) ![Firebase](https://img.shields.io/badge/Firebase-Hosted-orange)
+![Dashboard](https://img.shields.io/badge/Status-Live-brightgreen) ![React](https://img.shields.io/badge/React-19.0-blue) ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green) ![Firebase](https://img.shields.io/badge/Firebase-Hosted-orange)
 
 ## 🌐 Live Demo
 
-**[https://uidai-69d55.web.app/](https://uidai-69d55.web.app/)**
+**Frontend:** [https://uidai-69d55.web.app/](https://uidai-69d55.web.app/)
 
 ---
 
-## 🚀 What's New in v2.0
+## ✨ Features
 
-- **🐍 Python/FastAPI Backend**: Advanced analytics engine for hotspot detection and forecasting.
-- **🎨 Neo-Enterprise UI**: A professional "Slate & Indigo" dark theme with a focus on data density.
-- **📱 Sidebar Navigation**: Scalable layout replacing the old tab system.
-- **🛣️ Independent Route Optimizer**: Dedicated module for mobile camp scheduling with improved visualization placeholders.
-
----
-
-## ✨ Modules
-
-### 1. 📊 Overview & Geospatial Intelligence
-- **Real-time Operations Stats**: Instant view of Enrolments & Updates.
-- **Interactive India Map**: State-level intensity heatmaps for Enrolment vs Updates.
-- **Drill-down Analytics**: Service desert identification at the state level.
-
-### 2. 🛣️ Smart Route Optimizer (Dedicated Page)
-- **Hyper-Local Analysis**: Identifies target pincodes using `(High Biometric Demand + Low Child Enrolment)` logic.
-- **AI Recommendations**:
-  - *Example*: "Deploy Mobile Van on Tuesdays" for Pincode 560066.
-- **Demand Scoring**: 0-100 Priority Index.
-
-### 3. 📈 Forecaster
-- **Predictive Modeling**: Time-series analysis of biometric update surges.
-- **Resource Allocation**: Actionable insights for kit deployment (e.g., "Deploy 5 extra kits in Nov").
-
-### 4. 🛡️ Watchtower
-- **Anomaly Detection**: Real-time fraud pattern recognition.
-- **Traffic Light System**: 🔴 Critical / 🟡 Warning / 🟢 Nominal.
+| Module | Description |
+|--------|-------------|
+| 📊 **Overview** | Real-time stats, alerts, and system health |
+| 🗺️ **Geospatial** | State-level intensity maps for enrolment and demographics |
+| 📈 **Forecaster** | Predictive analytics for resource allocation |
+| 🛡️ **Watchtower** | Anomaly detection with traffic light system |
+| 🚐 **Route Optimizer** | AI-driven mobile camp scheduling |
 
 ---
 
-## 🛠️ Technical Architecture
+## 🛠️ Tech Stack
 
 ### Frontend
-- **Framework**: React 19 + Vite
-- **Routing**: React Router DOM (Sidebar Navigation)
-- **Styling**: Custom CSS Variables (Neo-Enterprise Theme)
-- **Icons**: Lucide React
+- React 19 + Vite
+- React Router DOM (Sidebar Navigation)
+- Recharts (Data visualization)
+- Lucide Icons
 
-### Backend (New!)
-- **Framework**: FastAPI (Python 3.13)
-- **Data Processing**: Pandas & NumPy
-- **Endpoints**:
-  - `/api/optimize/routes`: Hotspot calculation
-  - `/api/forecast`: Trend analysis
+### Backend
+- FastAPI (Python 3.11+)
+- Pandas & NumPy (Analytics)
+- Uvicorn (ASGI Server)
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. Frontend Setup
+### Frontend Only
 ```bash
 cd aadhaar-ops-dashboard
 npm install
 npm run dev
 ```
+Open [http://localhost:5173](http://localhost:5173)
 
-### 2. Backend Setup
+### Full Stack (Frontend + Backend)
+
+**Terminal 1 - Backend:**
 ```bash
-cd aadhaar-ops-dashboard/backend
+cd backend
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
-*Note: The frontend allows fallback to mock data if the backend is unreachable.*
+
+**Terminal 2 - Frontend:**
+```bash
+npm run dev
+```
+
+The Route Optimizer will show **"Live API"** badge when connected.
 
 ---
 
-## 🔧 Deployment
+## 📁 Project Structure
 
-### Firebase Hosting (Frontend)
+```
+aadhaar-ops-dashboard/
+├── src/
+│   ├── components/     # React components
+│   ├── pages/          # Page wrappers
+│   └── data/           # Sample data
+├── backend/
+│   ├── app/
+│   │   ├── main.py     # FastAPI entry point
+│   │   ├── analytics.py # Pandas analytics
+│   │   └── routers/    # API endpoints
+│   ├── requirements.txt
+│   └── Dockerfile
+├── render.yaml         # Render.com config
+└── firebase.json       # Firebase hosting
+```
+
+---
+
+## ☁️ Deployment
+
+### Frontend (Firebase)
 ```bash
 npm run build
 firebase deploy --only hosting
 ```
 
+### Backend (Render.com)
+1. Connect repo to [Render.com](https://render.com)
+2. Select "Web Service"
+3. Root Directory: `backend`
+4. Build: `pip install -r requirements.txt`
+5. Start: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+
+---
+
+## 📄 API Endpoints
+
+| Endpoint | Description |
+|----------|-------------|
+| `GET /` | Health check |
+| `GET /api/routes?state={state}` | Route optimization data |
+| `GET /api/stats` | Dashboard statistics |
+| `GET /api/geo/states` | Geospatial data |
+
 ---
 
 ## 👤 Author
+
 **Debanjan** - [@lucifer4330k](https://github.com/lucifer4330k)
