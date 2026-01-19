@@ -7,32 +7,32 @@
   --bg-secondary: #1e293b;
   --bg-tertiary: #334155;
   --bg-glass: rgba(30, 41, 59, 0.8);
-  
+
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  
+
   --accent-primary: #8b5cf6;
   --accent-secondary: #06b6d4;
   --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
-  
+
   --success: #22c55e;
   --warning: #eab308;
   --danger: #ef4444;
   --info: #3b82f6;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.3);
-  
+
   /* Border Radius */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --radius-xl: 24px;
-  
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;
@@ -363,8 +363,15 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .popup-header {
@@ -794,18 +801,27 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
 
-.district-cell, .date-cell {
+.district-cell,
+.date-cell {
   display: flex;
   align-items: center;
   gap: 8px;
   color: var(--text-secondary);
 }
 
-.district-cell svg, .date-cell svg {
+.district-cell svg,
+.date-cell svg {
   color: var(--text-muted);
 }
 
@@ -1000,15 +1016,308 @@ body {
   color: var(--text-muted);
 }
 
+/* ===== Macro View Layout ===== */
+.macro-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+}
+
+.map-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.map-section .india-map-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.map-section .legend {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 20px;
+}
+
+.map-section .legend h4 {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.map-section .legend-items {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ===== Route Optimizer Styles ===== */
+.route-optimizer {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.optimizer-header {
+  margin-bottom: 16px;
+}
+
+.optimizer-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.optimizer-title svg {
+  color: var(--accent-secondary);
+}
+
+.optimizer-title h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.optimizer-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.optimizer-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger.small {
+  padding: 8px 14px;
+  min-width: 140px;
+  font-size: 0.8rem;
+}
+
+.district-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  color: var(--accent-secondary);
+  margin-bottom: 16px;
+}
+
+.pincode-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.pincode-card {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 32px 1fr 50px;
+  gap: 12px;
+  align-items: start;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.pincode-card:hover {
+  border-color: var(--accent-secondary);
+  background: rgba(51, 65, 85, 0.8);
+}
+
+.pincode-rank {
+  width: 32px;
+  height: 32px;
+  background: var(--bg-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+}
+
+.pincode-main {
+  min-width: 0;
+}
+
+.pincode-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.pincode-number {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.pincode-area {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.demand-meter {
+  height: 4px;
+  background: var(--bg-secondary);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.demand-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width var(--transition-slow);
+}
+
+.pincode-stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stat-mini {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.stat-mini svg {
+  color: var(--text-muted);
+}
+
+.pincode-score {
+  text-align: right;
+}
+
+.pincode-score .score-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.pincode-score .score-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.pincode-details {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.recommendation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--success);
+  margin-bottom: 6px;
+}
+
+.recommendation svg {
+  flex-shrink: 0;
+}
+
+.reason {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.reason svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--warning);
+}
+
+.optimizer-insight {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.insight-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.insight-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.insight-text strong {
+  color: var(--accent-primary);
+}
+
 /* ===== Responsive Design ===== */
+@media (max-width: 1400px) {
+  .macro-layout {
+    grid-template-columns: 1fr 340px;
+  }
+}
+
 @media (max-width: 1200px) {
   .forecaster-content {
     grid-template-columns: 1fr;
   }
-  
+
   .action-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .macro-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .route-optimizer {
+    position: static;
+  }
+
+  .pincode-list {
+    max-height: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 
@@ -1016,27 +1325,31 @@ body {
   .map-container {
     grid-template-columns: 1fr;
   }
-  
+
   .legend {
     display: flex;
     align-items: center;
     gap: 20px;
   }
-  
+
   .legend h4 {
     margin-bottom: 0;
   }
-  
+
   .legend-items {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  
+
   .stats-bar {
     display: none;
   }
-  
+
   .action-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .pincode-list {
     grid-template-columns: 1fr;
   }
 }
@@ -1044,35 +1357,99 @@ body {
 @media (max-width: 768px) {
   .app-header {
     padding: 12px 16px;
+    flex-wrap: wrap;
+    gap: 12px;
   }
-  
+
   .tab-navigation {
     padding: 12px 16px;
     overflow-x: auto;
+    gap: 4px;
   }
-  
+
+  .tab-button {
+    padding: 10px 16px;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
   .main-content {
     padding: 16px;
   }
-  
+
   .view-header {
     flex-direction: column;
   }
-  
+
+  .header-info h2 {
+    font-size: 1.2rem;
+  }
+
   .toggle-container {
     width: 100%;
   }
-  
+
   .toggle-btn {
     flex: 1;
     justify-content: center;
+    padding: 10px 12px;
   }
-  
-  .india-map-grid {
-    grid-template-columns: 1fr;
+
+  .toggle-text {
+    display: none;
   }
-  
+
+  .india-map-grid,
+  .map-section .india-map-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .status-summary {
     flex-wrap: wrap;
+  }
+
+  .forecaster-content {
+    gap: 16px;
+  }
+
+  .chart-wrapper {
+    height: 280px;
+  }
+
+  .anomaly-table {
+    font-size: 0.8rem;
+  }
+
+  .anomaly-table th,
+  .anomaly-table td {
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .india-map-grid,
+  .map-section .india-map-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .state-card {
+    padding: 12px;
+  }
+
+  .pincode-card {
+    grid-template-columns: 28px 1fr 40px;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .pincode-stats {
+    gap: 8px;
+  }
+
+  .stat-mini {
+    font-size: 0.65rem;
   }
 }

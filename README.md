@@ -1,6 +1,6 @@
 # 🏛️ Aadhaar Ops - Command Center Dashboard
 
-A modern React-based analytics dashboard for UIDAI Aadhaar operations, featuring predictive resource allocation, anomaly detection, and geospatial intelligence visualization.
+A modern React-based analytics dashboard for UIDAI Aadhaar operations, featuring predictive resource allocation, anomaly detection, geospatial intelligence, and **hyper-local mobile camp optimization**.
 
 ![Dashboard Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![React](https://img.shields.io/badge/React-19.0-blue) ![Firebase](https://img.shields.io/badge/Firebase-Hosted-orange)
 
@@ -17,6 +17,22 @@ A modern React-based analytics dashboard for UIDAI Aadhaar operations, featuring
 - **Toggle Switch** between Enrolment Intensity and Demographic Updates
 - **State Popups** showing Update-to-Enrolment ratios and migration classification
 - Identifies **Service Deserts** and **Migration Hubs** across India
+
+### 🚐 NEW: Smart Route Optimizer (Hyper-Local Router)
+- **Pincode-Level Analysis** - Goes beyond district-level data
+- **Hotspot Detection** - Identifies areas with LOW child enrolments but HIGH adult biometric updates
+- **Mobile Van Scheduling** - Recommends specific days for deployment
+- **Demand Scoring** - Ranks pincodes by urgency (0-100 scale)
+- **Estimated Footfall** - Predicts daily visitors per location
+
+**Example Output:**
+```
+📍 Pincode 560066 (Whitefield East)
+   Score: 92/100 - Critical Demand
+   🚚 Deploy Mobile Van on Tuesdays & Thursdays
+   💡 Mature IT corridor - high adult updates, low child enrolments
+   👥 Est. Footfall: 180/day
+```
 
 ### 📈 Tab 2: Forecaster (Resource Allocation)
 - **Time-Series Charts** showing enrolment-to-biometric update correlation
@@ -72,13 +88,14 @@ aadhaar-ops-dashboard/
 ├── src/
 │   ├── components/
 │   │   ├── TabNavigation.jsx    # Tab switcher with icons
-│   │   ├── MacroView.jsx        # Geospatial intensity visualization
+│   │   ├── MacroView.jsx        # Geospatial intensity + Route Optimizer
+│   │   ├── RouteOptimizer.jsx   # 🆕 Pincode-level hotspot analysis
 │   │   ├── Forecaster.jsx       # Time-series prediction charts
 │   │   └── Watchtower.jsx       # Anomaly detection table
 │   ├── data/
-│   │   └── sampleData.js        # Aggregated sample data
+│   │   └── sampleData.js        # State, district & pincode data
 │   ├── App.jsx                  # Main app with tab routing
-│   ├── index.css                # Premium dark theme styles
+│   ├── index.css                # Premium dark theme + responsive
 │   └── main.jsx                 # Entry point
 ├── firebase.json                # Firebase hosting config
 ├── package.json
@@ -101,32 +118,34 @@ aadhaar-ops-dashboard/
 
 ## 📊 Data Sources
 
-The dashboard is designed to work with UIDAI Aadhaar data containing:
+The dashboard works with UIDAI Aadhaar data at multiple levels:
 
-| Dataset | Fields |
-|---------|--------|
-| **Biometric** | date, state, district, pincode, bio_age_5_17, bio_age_17_ |
-| **Demographic** | date, state, district, pincode, demo_age_5_17, demo_age_17_ |
-| **Enrolment** | date, state, district, pincode, age_0_5, age_5_17, age_18_greater |
-
----
-
-## 🎨 Design Features
-
-- **Premium Dark Theme** with glassmorphism effects
-- **Smooth Animations** and micro-interactions
-- **Responsive Design** for desktop and tablet
-- **Custom Scrollbars** and gradient accents
-- **Google Inter Font** for modern typography
+| Level | Data Points |
+|-------|-------------|
+| **State** | Enrolment intensity, demographic updates, migration ratio |
+| **District** | Anomaly scores, update patterns, center locations |
+| **Pincode** | 🆕 Child enrolments, adult biometric updates, demand scores |
 
 ---
 
-## 📋 Use Cases
+## 🎯 Smart Route Optimizer Logic
 
-1. **Policy Makers**: Identify service deserts requiring additional Aadhaar centers
-2. **Operations Team**: Predict resource requirements for biometric updates
-3. **Fraud Detection**: Flag suspicious DOB update patterns for investigation
-4. **Migration Analysis**: Track population movement patterns via address updates
+The algorithm identifies **Hotspot Pincodes** where:
+- **Child Enrolment (0-5) is LOW** → Few new births being registered
+- **Biometric Updates are HIGH** → Many adults needing mandatory updates
+
+**Insight**: This indicates mature residential areas where children are growing up, but new babies aren't being enrolled (possibly due to lack of maternity wards or Aadhaar centers nearby).
+
+**Action**: Deploy Mobile Vans to these underserved pincodes on recommended schedules.
+
+---
+
+## 📱 Responsive Design
+
+- ✅ Desktop (1400px+) - Full 2-column layout
+- ✅ Laptop (1200px) - Stacked layout
+- ✅ Tablet (768px) - Optimized grids
+- ✅ Mobile (480px) - Single column
 
 ---
 

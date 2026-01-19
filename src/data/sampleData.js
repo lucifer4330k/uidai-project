@@ -251,3 +251,286 @@ export const dashboardStats = {
   averageProcessingTime: '4.2 mins',
   peakHour: '11:00 AM - 12:00 PM'
 };
+
+// Pincode-level hotspot data for Smart Route Optimizer
+// Logic: Low Enrolment (0-5) + High Biometric Updates = Mobile Camp Needed
+export const pincodeHotspots = {
+  'Karnataka': {
+    district: 'Bangalore Urban',
+    pincodes: [
+      {
+        pincode: '560066',
+        area: 'Whitefield East',
+        demandScore: 92,
+        enrolment_0_5: 45,
+        biometricUpdates: 1250,
+        recommendation: 'Deploy Mobile Van on Tuesdays & Thursdays',
+        reason: 'Mature IT corridor - high adult updates, low child enrolments',
+        estimatedFootfall: 180
+      },
+      {
+        pincode: '560103',
+        area: 'Sarjapur Road',
+        demandScore: 88,
+        enrolment_0_5: 52,
+        biometricUpdates: 1180,
+        recommendation: 'Deploy Mobile Van on Wednesdays',
+        reason: 'New residential area with aging population needing updates',
+        estimatedFootfall: 165
+      },
+      {
+        pincode: '560037',
+        area: 'BTM Layout',
+        demandScore: 85,
+        enrolment_0_5: 58,
+        biometricUpdates: 1050,
+        recommendation: 'Deploy Mobile Van on Mondays',
+        reason: 'Dense locality with high working population',
+        estimatedFootfall: 150
+      },
+      {
+        pincode: '560068',
+        area: 'Marathahalli',
+        demandScore: 78,
+        enrolment_0_5: 65,
+        biometricUpdates: 920,
+        recommendation: 'Deploy Mobile Van on Fridays',
+        reason: 'Tech hub with migrant workforce requiring updates',
+        estimatedFootfall: 135
+      },
+      {
+        pincode: '560048',
+        area: 'Koramangala',
+        demandScore: 72,
+        enrolment_0_5: 72,
+        biometricUpdates: 850,
+        recommendation: 'Bi-weekly camp recommended',
+        reason: 'Startup hub with young professionals',
+        estimatedFootfall: 120
+      }
+    ]
+  },
+  'Maharashtra': {
+    district: 'Mumbai Suburban',
+    pincodes: [
+      {
+        pincode: '400076',
+        area: 'Powai',
+        demandScore: 95,
+        enrolment_0_5: 38,
+        biometricUpdates: 1420,
+        recommendation: 'Deploy Mobile Van on Mon, Wed, Fri',
+        reason: 'IIT campus area - highly educated adults, few children',
+        estimatedFootfall: 210
+      },
+      {
+        pincode: '400072',
+        area: 'Andheri East',
+        demandScore: 89,
+        enrolment_0_5: 48,
+        biometricUpdates: 1280,
+        recommendation: 'Deploy Mobile Van on Tuesdays & Saturdays',
+        reason: 'Commercial hub with dense office complexes',
+        estimatedFootfall: 185
+      },
+      {
+        pincode: '400093',
+        area: 'Malad West',
+        demandScore: 82,
+        enrolment_0_5: 55,
+        biometricUpdates: 1100,
+        recommendation: 'Deploy Mobile Van on Thursdays',
+        reason: 'Residential suburb with aging residents',
+        estimatedFootfall: 160
+      },
+      {
+        pincode: '400064',
+        area: 'Goregaon',
+        demandScore: 76,
+        enrolment_0_5: 62,
+        biometricUpdates: 980,
+        recommendation: 'Weekly camp on Saturdays',
+        reason: 'Film city workers - irregular schedules',
+        estimatedFootfall: 140
+      },
+      {
+        pincode: '400053',
+        area: 'Bandra East',
+        demandScore: 70,
+        enrolment_0_5: 68,
+        biometricUpdates: 890,
+        recommendation: 'Bi-weekly camp recommended',
+        reason: 'BKC office workers needing updates',
+        estimatedFootfall: 125
+      }
+    ]
+  },
+  'Delhi': {
+    district: 'South Delhi',
+    pincodes: [
+      {
+        pincode: '110020',
+        area: 'Hauz Khas',
+        demandScore: 94,
+        enrolment_0_5: 35,
+        biometricUpdates: 1380,
+        recommendation: 'Deploy Mobile Van on Mon, Wed, Fri',
+        reason: 'University area - students and young professionals',
+        estimatedFootfall: 200
+      },
+      {
+        pincode: '110017',
+        area: 'Malviya Nagar',
+        demandScore: 87,
+        enrolment_0_5: 45,
+        biometricUpdates: 1220,
+        recommendation: 'Deploy Mobile Van on Tuesdays & Thursdays',
+        reason: 'Mature neighborhood with established families',
+        estimatedFootfall: 175
+      },
+      {
+        pincode: '110048',
+        area: 'Nehru Place',
+        demandScore: 83,
+        enrolment_0_5: 50,
+        biometricUpdates: 1150,
+        recommendation: 'Deploy Mobile Van on Wednesdays',
+        reason: 'Electronics market - high vendor population',
+        estimatedFootfall: 165
+      },
+      {
+        pincode: '110024',
+        area: 'Defence Colony',
+        demandScore: 75,
+        enrolment_0_5: 58,
+        biometricUpdates: 950,
+        recommendation: 'Weekly camp on Saturdays',
+        reason: 'Residential area with aging population',
+        estimatedFootfall: 130
+      },
+      {
+        pincode: '110049',
+        area: 'East of Kailash',
+        demandScore: 68,
+        enrolment_0_5: 65,
+        biometricUpdates: 820,
+        recommendation: 'Bi-weekly camp recommended',
+        reason: 'Mixed residential with moderate demand',
+        estimatedFootfall: 115
+      }
+    ]
+  },
+  'Telangana': {
+    district: 'Hyderabad',
+    pincodes: [
+      {
+        pincode: '500081',
+        area: 'Madhapur',
+        demandScore: 96,
+        enrolment_0_5: 32,
+        biometricUpdates: 1520,
+        recommendation: 'Deploy Mobile Van Daily (Mon-Fri)',
+        reason: 'HITEC City - massive IT workforce',
+        estimatedFootfall: 250
+      },
+      {
+        pincode: '500084',
+        area: 'Gachibowli',
+        demandScore: 91,
+        enrolment_0_5: 40,
+        biometricUpdates: 1350,
+        recommendation: 'Deploy Mobile Van on Tuesdays, Thursdays, Saturdays',
+        reason: 'Financial district with young professionals',
+        estimatedFootfall: 195
+      },
+      {
+        pincode: '500032',
+        area: 'Jubilee Hills',
+        demandScore: 79,
+        enrolment_0_5: 55,
+        biometricUpdates: 1020,
+        recommendation: 'Deploy Mobile Van on Wednesdays',
+        reason: 'Upscale residential - established families',
+        estimatedFootfall: 145
+      },
+      {
+        pincode: '500033',
+        area: 'Banjara Hills',
+        demandScore: 74,
+        enrolment_0_5: 60,
+        biometricUpdates: 920,
+        recommendation: 'Weekly camp on Fridays',
+        reason: 'Commercial and residential mix',
+        estimatedFootfall: 130
+      },
+      {
+        pincode: '500034',
+        area: 'Somajiguda',
+        demandScore: 67,
+        enrolment_0_5: 68,
+        biometricUpdates: 780,
+        recommendation: 'Bi-weekly camp recommended',
+        reason: 'Government offices area',
+        estimatedFootfall: 110
+      }
+    ]
+  },
+  'Haryana': {
+    district: 'Gurugram',
+    pincodes: [
+      {
+        pincode: '122002',
+        area: 'Cyber City',
+        demandScore: 97,
+        enrolment_0_5: 28,
+        biometricUpdates: 1680,
+        recommendation: 'Deploy Mobile Van Daily (Mon-Sat)',
+        reason: 'Corporate hub - highest update demand in NCR',
+        estimatedFootfall: 280
+      },
+      {
+        pincode: '122001',
+        area: 'DLF Phase 1-3',
+        demandScore: 90,
+        enrolment_0_5: 42,
+        biometricUpdates: 1320,
+        recommendation: 'Deploy Mobile Van on Mon, Wed, Fri',
+        reason: 'Premium residential with IT professionals',
+        estimatedFootfall: 190
+      },
+      {
+        pincode: '122018',
+        area: 'Sohna Road',
+        demandScore: 84,
+        enrolment_0_5: 52,
+        biometricUpdates: 1150,
+        recommendation: 'Deploy Mobile Van on Tuesdays & Saturdays',
+        reason: 'New township with young families transitioning',
+        estimatedFootfall: 165
+      },
+      {
+        pincode: '122009',
+        area: 'Golf Course Road',
+        demandScore: 77,
+        enrolment_0_5: 58,
+        biometricUpdates: 980,
+        recommendation: 'Weekly camp on Thursdays',
+        reason: 'Luxury apartments with expat population',
+        estimatedFootfall: 140
+      },
+      {
+        pincode: '122003',
+        area: 'MG Road',
+        demandScore: 71,
+        enrolment_0_5: 64,
+        biometricUpdates: 850,
+        recommendation: 'Bi-weekly camp recommended',
+        reason: 'Commercial corridor with mixed population',
+        estimatedFootfall: 120
+      }
+    ]
+  }
+};
+
+// Get available states with pincode data
+export const routeOptimizerStates = Object.keys(pincodeHotspots);
