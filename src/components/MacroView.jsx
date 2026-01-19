@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Users, ArrowUpDown, Info } from 'lucide-react';
 import { stateGeoData, states } from '../data/sampleData';
-import RouteOptimizer from './RouteOptimizer';
 
 export default function MacroView() {
     const [viewMode, setViewMode] = useState('enrolment'); // 'enrolment' or 'demographic'
@@ -145,10 +144,6 @@ export default function MacroView() {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="route-section">
-                    <RouteOptimizer />
                 </div>
             </div>
         </div>

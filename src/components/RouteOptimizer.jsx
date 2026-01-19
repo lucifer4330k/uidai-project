@@ -24,7 +24,7 @@ export default function RouteOptimizer() {
     };
 
     return (
-        <div className="route-optimizer">
+        <div className="route-optimizer-card">
             <div className="optimizer-header">
                 <div className="optimizer-title">
                     <Route size={20} />
