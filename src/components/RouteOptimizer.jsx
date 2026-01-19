@@ -19,7 +19,8 @@ export default function RouteOptimizer() {
             setIsLoading(true);
             try {
                 // Try fetching from Python Backend
-                const response = await fetch(`http://localhost:8000/api/routes?state=${selectedState}`);
+                const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+                const response = await fetch(`${API_URL}/api/routes?state=${selectedState}`);
                 if (response.ok) {
                     const data = await response.json();
                     setPincodeData(data.pincodes);
