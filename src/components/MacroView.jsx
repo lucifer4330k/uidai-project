@@ -39,19 +39,45 @@ export default function MacroView() {
                     <p>Visualize Service Deserts and Migration Hubs across India</p>
                 </div>
 
-                <div className="toggle-container">
+                <div className="toggle-container" style={{ background: '#1e293b', padding: '4px', borderRadius: '8px', border: '1px solid #334155' }}>
                     <button
                         className={`toggle-btn ${viewMode === 'enrolment' ? 'active' : ''}`}
                         onClick={() => setViewMode('enrolment')}
+                        style={{
+                            background: viewMode === 'enrolment' ? 'rgba(99, 102, 241, 0.2)' : 'transparent',
+                            color: viewMode === 'enrolment' ? '#818cf8' : '#94a3b8',
+                            border: 'none',
+                            padding: '6px 12px',
+                            borderRadius: '6px',
+                            fontSize: '0.85rem',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            transition: 'all 0.2s'
+                        }}
                     >
-                        <Users size={16} />
+                        <Users size={14} />
                         <span className="toggle-text">Enrolment Intensity</span>
                     </button>
                     <button
                         className={`toggle-btn ${viewMode === 'demographic' ? 'active' : ''}`}
                         onClick={() => setViewMode('demographic')}
+                        style={{
+                            background: viewMode === 'demographic' ? 'rgba(236, 72, 153, 0.2)' : 'transparent',
+                            color: viewMode === 'demographic' ? '#f472b6' : '#94a3b8',
+                            border: 'none',
+                            padding: '6px 12px',
+                            borderRadius: '6px',
+                            fontSize: '0.85rem',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            transition: 'all 0.2s'
+                        }}
                     >
-                        <ArrowUpDown size={16} />
+                        <ArrowUpDown size={14} />
                         <span className="toggle-text">Demographic Updates</span>
                     </button>
                 </div>

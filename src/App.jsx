@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import Overview from './pages/Overview';
 import ForecasterPage from './pages/ForecasterPage';
 import WatchtowerPage from './pages/WatchtowerPage';
+import GeospatialPage from './pages/GeospatialPage';
 import RouteOptimizerPage from './pages/RouteOptimizerPage';
 
 export default function App() {
@@ -14,7 +15,7 @@ export default function App() {
         <main className="main-wrapper">
           <Routes>
             <Route path="/" element={<Overview />} />
-            <Route path="/geo" element={<Navigate to="/" replace />} />
+            <Route path="/geo" element={<GeospatialPage />} />
             <Route path="/forecast" element={<ForecasterPage />} />
             <Route path="/watchtower" element={<WatchtowerPage />} />
             <Route path="/optimizer" element={<RouteOptimizerPage />} />
